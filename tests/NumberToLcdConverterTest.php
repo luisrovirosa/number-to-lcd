@@ -11,7 +11,7 @@ class NumberToLcdConverterTest extends TestCase
      * @test
      * @dataProvider oneDigitNumbers
      */
-    public function convert_1_to_lcd_number($decimal, $expectedLcdNumber): void
+    public function convert_decimal_number_to_lcd_number($decimal, $expectedLcdNumber): void
     {
         $converter = new NumberToLcd();
 
@@ -25,7 +25,10 @@ class NumberToLcdConverterTest extends TestCase
         return [
             [1, "   \n" .
                 "  |\n" .
-                "  |\n"]
+                "  |\n"],
+            [2, " _ \n" .
+                " _|\n" .
+                "|_ \n"]
         ];
     }
 }
