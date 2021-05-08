@@ -7,17 +7,25 @@ use PHPUnit\Framework\TestCase;
 
 class NumberToLcdConverterTest extends TestCase
 {
-    /** @test */
-    public function convert_1_to_lcd_number(): void
+    /**
+     * @test
+     * @dataProvider oneDigitNumbers
+     */
+    public function convert_1_to_lcd_number($decimal, $expectedLcdNumber): void
     {
         $converter = new NumberToLcd();
 
-        $result = $converter->convert(1);
+        $result = $converter->convert($decimal);
 
-        $lcdNumber =
-            "   \n" .
-            "  |\n" .
-            "  |\n";
-        self::assertEquals($lcdNumber, $result);
+        self::assertEquals($expectedLcdNumber, $result);
+    }
+
+    public function oneDigitNumbers(): array
+    {
+        return [
+            [1, "   \n" .
+                "  |\n" .
+                "  |\n"]
+        ];
     }
 }
