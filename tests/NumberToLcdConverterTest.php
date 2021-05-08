@@ -107,6 +107,11 @@ class NumberToLcdConverterTest extends TestCase
             [345," _     _ \n" .
                 " _||_||_ \n" .
                 " _|  | _|\n",
+            ],
+            [100,
+                "    _  _ \n" .
+                "  || || |\n" .
+                "  ||_||_|\n",
             ]
         ];
     }
