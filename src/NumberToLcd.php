@@ -35,12 +35,10 @@ class NumberToLcd
     private static function toLcd(int $decimal): array
     {
         if ($decimal >= 10) {
-            $number = self::mergeNumbers(self::toLcd((int)($decimal / 10)), self::NUMBERS[$decimal % 10]);
-        } else {
-            $number = self::NUMBERS[$decimal];
+            return self::mergeNumbers(self::toLcd((int)($decimal / 10)), self::NUMBERS[$decimal % 10]);
         }
 
-        return $number;
+        return self::NUMBERS[$decimal];
     }
 
     private static function mergeNumbers(array $left, array $right): array
