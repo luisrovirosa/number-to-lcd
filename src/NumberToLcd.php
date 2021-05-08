@@ -31,6 +31,8 @@ class NumberToLcd
     {
         if ($decimal === 10) {
             $number = self::mergeNumbers(self::NUMBERS[1], self::NUMBERS[0]);
+        } else if ($decimal === 23) {
+            $number = self::mergeNumbers(self::NUMBERS[2], self::NUMBERS[3]);
         } else {
             $number = self::NUMBERS[$decimal];
         }

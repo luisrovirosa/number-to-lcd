@@ -69,4 +69,17 @@ class NumberToLcdConverterTest extends TestCase
             "  ||_|\n";
         self::assertEquals($lcdNumber, $result);
     }
+    /** @test */
+    public function convert_23_to_lcd_number(): void
+    {
+        $converter = new NumberToLcd();
+
+        $result = $converter->convert(23);
+
+        $lcdNumber =
+            " _  _ \n" .
+            " _| _|\n" .
+            "|_  _|\n";
+        self::assertEquals($lcdNumber, $result);
+    }
 }
