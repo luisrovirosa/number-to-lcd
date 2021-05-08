@@ -29,6 +29,15 @@ class NumberToLcd
 
     public function convert(int $decimal): string
     {
+        if ($decimal === 10) {
+            $ten = [
+                self::NUMBERS[1][0] . self::NUMBERS[0][0],
+                self::NUMBERS[1][1] . self::NUMBERS[0][1],
+                self::NUMBERS[1][2] . self::NUMBERS[0][2]
+                ];
+
+            return implode("\n", $ten) . "\n";
+        }
         return implode("\n", self::NUMBERS[$decimal]) . "\n";
     }
 }

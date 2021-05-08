@@ -59,7 +59,6 @@ class NumberToLcdConverterTest extends TestCase
     /** @test */
     public function convert_10_to_lcd_number(): void
     {
-        self::markTestIncomplete('I need a previous refactor');
         $converter = new NumberToLcd();
 
         $result = $converter->convert(10);
