@@ -17,34 +17,19 @@ class NumberToLcd
 
     public function convert(int $decimal): string
     {
-        if ($decimal === 2) {
-            return self::NUMBER_2;
-        }
-        if ($decimal === 3) {
-            return self::NUMBER_3;
-        }
-        if ($decimal === 4) {
-            return self::NUMBER_4;
-        }
-        if ($decimal === 5) {
-            return self::NUMBER_5;
-        }
-        if ($decimal === 6) {
-            return self::NUMBER_6;
-        }
-        if ($decimal === 7) {
-            return self::NUMBER_7;
-        }
-        if ($decimal === 8) {
-            return self::NUMBER_8;
-        }
-        if ($decimal === 9) {
-            return self::NUMBER_9;
-        }
-        if ($decimal === 0) {
-            return self::NUMBER_0;
-        }
+        $numbers = [
+            self::NUMBER_0,
+            self::NUMBER_1,
+            self::NUMBER_2,
+            self::NUMBER_3,
+            self::NUMBER_4,
+            self::NUMBER_5,
+            self::NUMBER_6,
+            self::NUMBER_7,
+            self::NUMBER_8,
+            self::NUMBER_9,
+        ];
 
-        return self::NUMBER_1;
+        return $numbers[$decimal];
     }
 }
