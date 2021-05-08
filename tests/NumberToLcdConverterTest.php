@@ -82,4 +82,31 @@ class NumberToLcdConverterTest extends TestCase
             ],
         ];
     }
+
+    /**
+     * @test
+     * @dataProvider threeDigitNumbers
+     */
+    public function convert_three_digit_numbers_to_lcd_number(int $decimal, string $expectedLcdNumber): void
+    {
+        $converter = new NumberToLcd();
+
+        $result = $converter->convert($decimal);
+
+        self::assertEquals($expectedLcdNumber, $result);
+    }
+
+    public function threeDigitNumbers(): array
+    {
+        return [
+            [100,"    _  _ \n" .
+                "  || || |\n" .
+                "  ||_||_|\n",
+            ],
+            [345," _     _ \n" .
+                " _||_||_ \n" .
+                " _|  | _|\n",
+            ]
+        ];
+    }
 }
