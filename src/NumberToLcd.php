@@ -27,6 +27,9 @@ class NumberToLcd
         if ($decimal === 8) {
             return " _ \n|_|\n|_|\n";
         }
+        if ($decimal === 9) {
+            return " _ \n|_|\n _|\n";
+        }
 
         return "   \n  |\n  |\n";
     }
