@@ -29,9 +29,7 @@ class NumberToLcd
 
     public function convert(int $decimal): string
     {
-        if ($decimal === 10) {
-            $number = self::mergeNumbers(self::NUMBERS[$decimal/10], self::NUMBERS[$decimal%10]);
-        } else if ($decimal === 23) {
+        if ($decimal >= 10) {
             $number = self::mergeNumbers(self::NUMBERS[$decimal/10], self::NUMBERS[$decimal%10]);
         } else {
             $number = self::NUMBERS[$decimal];
