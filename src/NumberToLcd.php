@@ -30,11 +30,7 @@ class NumberToLcd
     public function convert(int $decimal): string
     {
         if ($decimal === 10) {
-            $number = [
-                self::NUMBERS[1][0] . self::NUMBERS[0][0],
-                self::NUMBERS[1][1] . self::NUMBERS[0][1],
-                self::NUMBERS[1][2] . self::NUMBERS[0][2],
-            ];
+            $number = self::mergeNumbers(self::NUMBERS[1], self::NUMBERS[0]);
         } else {
             $number = [
                 self::NUMBERS[$decimal][0],
@@ -44,5 +40,14 @@ class NumberToLcd
         }
 
         return implode("\n", $number) . "\n";
+    }
+
+    private static function mergeNumbers(array $left, array $right): array
+    {
+        return [
+            $left[0] . $right[0],
+            $left[1] . $right[1],
+            $left[2] . $right[2],
+        ];
     }
 }
