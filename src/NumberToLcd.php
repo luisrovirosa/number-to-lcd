@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace Kata;
 
@@ -9,6 +9,10 @@ class NumberToLcd
         if ($decimal === 2) {
             return " _ \n _|\n|_ \n";
         }
+        if ($decimal === 3) {
+            return " _ \n _|\n _|\n";
+        }
+
         return "   \n  |\n  |\n";
     }
 }
