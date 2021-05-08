@@ -29,16 +29,21 @@ class NumberToLcd
 
     public function convert(int $decimal): string
     {
+        return implode("\n", self::toLcd($decimal)) . "\n";
+    }
+
+    private static function toLcd(int $decimal): array
+    {
         if ($decimal >= 100) {
-            $firstTwoDigits = self::mergeNumbers(self::NUMBERS[$decimal/100], self::NUMBERS[($decimal/10)%10]);
-            $number = self::mergeNumbers($firstTwoDigits, self::NUMBERS[$decimal%10]);
-        } else if ($decimal >= 10) {
-            $number = self::mergeNumbers(self::NUMBERS[$decimal/10], self::NUMBERS[$decimal%10]);
+            $firstTwoDigits = self::mergeNumbers(self::NUMBERS[$decimal / 100], self::NUMBERS[($decimal / 10) % 10]);
+            $number = self::mergeNumbers($firstTwoDigits, self::NUMBERS[$decimal % 10]);
+        } elseif ($decimal >= 10) {
+            $number = self::mergeNumbers(self::NUMBERS[$decimal / 10], self::NUMBERS[$decimal % 10]);
         } else {
             $number = self::NUMBERS[$decimal];
         }
 
-        return implode("\n", $number) . "\n";
+        return $number;
     }
 
     private static function mergeNumbers(array $left, array $right): array
