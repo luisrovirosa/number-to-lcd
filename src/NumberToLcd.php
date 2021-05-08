@@ -15,16 +15,16 @@ class NumberToLcd
     private const NUMBER_8 = [" _ ", "|_|", "|_|"];
     private const NUMBER_9 = [" _ ", "|_|", " _|"];
     private const NUMBERS = [
-        self::NUMBER_0,
-        self::NUMBER_1,
-        self::NUMBER_2,
-        self::NUMBER_3,
-        self::NUMBER_4,
-        self::NUMBER_5,
-        self::NUMBER_6,
-        self::NUMBER_7,
-        self::NUMBER_8,
-        self::NUMBER_9,
+        0 => self::NUMBER_0,
+        1 => self::NUMBER_1,
+        2 => self::NUMBER_2,
+        3 => self::NUMBER_3,
+        4 => self::NUMBER_4,
+        5 => self::NUMBER_5,
+        6 => self::NUMBER_6,
+        7 => self::NUMBER_7,
+        8 => self::NUMBER_8,
+        9 => self::NUMBER_9,
     ];
 
     public function convert(int $decimal): string
