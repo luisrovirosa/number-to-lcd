@@ -55,4 +55,19 @@ class NumberToLcdConverterTest extends TestCase
                 "|_|\n"]
         ];
     }
+
+    /** @test */
+    public function convert_10_to_lcd_number(): void
+    {
+        self::markTestIncomplete('I need a previous refactor');
+        $converter = new NumberToLcd();
+
+        $result = $converter->convert(10);
+
+        $lcdNumber =
+            "    _ \n" .
+            "  || |\n" .
+            "  ||_|\n";
+        self::assertEquals($lcdNumber, $result);
+    }
 }
