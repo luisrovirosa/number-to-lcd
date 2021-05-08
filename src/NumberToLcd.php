@@ -32,11 +32,7 @@ class NumberToLcd
         if ($decimal === 10) {
             $number = self::mergeNumbers(self::NUMBERS[1], self::NUMBERS[0]);
         } else {
-            $number = [
-                self::NUMBERS[$decimal][0],
-                self::NUMBERS[$decimal][1],
-                self::NUMBERS[$decimal][2],
-            ];
+            $number = self::NUMBERS[$decimal];
         }
 
         return implode("\n", $number) . "\n";
