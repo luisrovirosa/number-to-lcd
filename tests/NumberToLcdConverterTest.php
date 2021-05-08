@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace KataTests;
 
@@ -11,7 +11,7 @@ class NumberToLcdConverterTest extends TestCase
      * @test
      * @dataProvider oneDigitNumbers
      */
-    public function convert_decimal_number_to_lcd_number($decimal, $expectedLcdNumber): void
+    public function convert_decimal_number_to_lcd_number(int $decimal, string $expectedLcdNumber): void
     {
         $converter = new NumberToLcd();
 
@@ -56,30 +56,30 @@ class NumberToLcdConverterTest extends TestCase
         ];
     }
 
-    /** @test */
-    public function convert_10_to_lcd_number(): void
+    /**
+     * @test
+     * @dataProvider twoDigitNumbers
+     */
+    public function convert_two_digit_numbers_to_lcd_number(int $decimal, string $expectedLcdNumber): void
     {
         $converter = new NumberToLcd();
 
-        $result = $converter->convert(10);
+        $result = $converter->convert($decimal);
 
-        $lcdNumber =
-            "    _ \n" .
-            "  || |\n" .
-            "  ||_|\n";
-        self::assertEquals($lcdNumber, $result);
+        self::assertEquals($expectedLcdNumber, $result);
     }
-    /** @test */
-    public function convert_23_to_lcd_number(): void
+
+    public function twoDigitNumbers(): array
     {
-        $converter = new NumberToLcd();
-
-        $result = $converter->convert(23);
-
-        $lcdNumber =
-            " _  _ \n" .
-            " _| _|\n" .
-            "|_  _|\n";
-        self::assertEquals($lcdNumber, $result);
+        return [
+            [10,"    _ \n" .
+                "  || |\n" .
+                "  ||_|\n",
+            ],
+            [23," _  _ \n" .
+                " _| _|\n" .
+                "|_  _|\n",
+            ],
+        ];
     }
 }
