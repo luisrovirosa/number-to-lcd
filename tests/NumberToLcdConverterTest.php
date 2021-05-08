@@ -99,9 +99,10 @@ class NumberToLcdConverterTest extends TestCase
     public function threeDigitNumbers(): array
     {
         return [
-            [100,"    _  _ \n" .
-                "  || || |\n" .
-                "  ||_||_|\n",
+            [123,
+                "    _  _ \n" .
+                "  | _| _|\n" .
+                "  ||_  _|\n",
             ],
             [345," _     _ \n" .
                 " _||_||_ \n" .
