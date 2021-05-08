@@ -36,7 +36,11 @@ class NumberToLcd
                 self::NUMBERS[1][2] . self::NUMBERS[0][2],
             ];
         } else {
-            $number = self::NUMBERS[$decimal];
+            $number = [
+                self::NUMBERS[$decimal][0],
+                self::NUMBERS[$decimal][1],
+                self::NUMBERS[$decimal][2],
+            ];
         }
 
         return implode("\n", $number) . "\n";
